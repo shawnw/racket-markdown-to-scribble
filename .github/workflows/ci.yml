@@ -24,6 +24,6 @@ jobs:
       - name: Installing markdown-to-scribble and its dependencies
         run: raco pkg install --no-docs --auto --name markdown-to-scribble
       - name: Compiling markdown-to-scribble and building its docs
-        run: raco setup --check-pkg-deps --unused-pkg-deps markdown-to-scribble
+        run: raco setup --check-pkg-deps --unused-pkg-deps --pkgs markdown-to-scribble
       - name: Testing markdown-to-scribble
         run: raco test -x -p markdown-to-scribble
