@@ -56,7 +56,7 @@
         (write-string "}\n" out))
        (else
         (write-inline content out)
-        (newline out)))]
+        (write-string "\n\n" out)))]
     [(struct itemization (blocks style start-num))
      (if start-num
          (write-list blocks style 'ordered out)

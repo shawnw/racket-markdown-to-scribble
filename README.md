@@ -30,3 +30,5 @@ some text with [a link](https://racket-lang.org) in it.
 > of text
 
 Some text with @bold{scribble} markup that shouldn't be parsed.
+
+and a second paragraph immediately following.
