@@ -115,7 +115,7 @@
      (write-inline content out)
      (write-char #\} out)]
     [(struct code (text))
-     (fprintf out "@tt{@literal[~S]}" text)]
+     (fprintf out "@tt[~S]" text)]
     [(struct link (content url title))
      (fprintf out "@hyperlink[~S]{" url)
      (write-inline content out)

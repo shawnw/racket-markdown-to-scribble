@@ -9,7 +9,7 @@ Some samples for testing:
 }
 @item{@para{bullet}
 }
-@item{@para{list @tt{@literal["with code (+ 1 2)"]} and @italic{markup}}
+@item{@para{list @tt["with code (+ 1 2)"] and @italic{markup}}
 }
 ]
 and
@@ -18,7 +18,7 @@ and
 }
 @item{@para{numbered}
 }
-@item{@para{list with @tt{@literal["code @linebreak"]} and @bold{markup}}
+@item{@para{list with @tt["code @linebreak"] and @bold{markup}}
 }
 ]
 @subsection{a subsection}
