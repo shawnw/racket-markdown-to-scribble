@@ -84,19 +84,19 @@
        ((1)
         (write-string "@section{" out)
         (write-inline title out)
-        (write-string "}\n" out))
+        (write-string "}\n\n" out))
        ((2)
         (write-string "@subsection{" out)
         (write-inline title out)
-        (write-string "}\n" out))
+        (write-string "}\n\n" out))
        ((3)
         (write-string "@subsubsection{" out)
         (write-inline title out)
-        (write-string "}\n" out))
+        (write-string "}\n\n" out))
        (else
         (write-string "@subsubsub*section{" out)
         (write-inline title out)
-        (write-string "}\n")))]
+        (write-string "}\n\n")))]
     [(? thematic-break? _)
      (void)] ; Need to figure out what to use for this
     [_

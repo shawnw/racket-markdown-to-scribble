@@ -3,6 +3,7 @@
 @title["Foo"]
 @author["Shawn"]
 @section{markdown-to-scribble}
+
 Convert markdown text to Scribble markup.
 
 Some samples for testing:
@@ -26,9 +27,11 @@ and
 }
 ]
 @subsection{a subsection}
+
 @nested[#:style 'code-inset]{@verbatim["a code block\n(+ 1 2)\n"]}
 
 @subsubsection{and deeper subsubsection}
+
 some text with @hyperlink["https://racket-lang.org"]{a link} in it.
 
 @nested[#:style 'inset]{
@@ -43,6 +46,7 @@ Some text with @"@"bold@"{"scribble@"}" markup that shouldn't be parsed.
 and a second paragraph immediately following.
 
 @subsubsub*section{A level-4 heading}
+
 @codeblock|{
 ; a fenced code block of scheme
 (+ 1 2 3)
