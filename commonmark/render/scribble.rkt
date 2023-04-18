@@ -71,9 +71,12 @@
     [(struct blockquote (blocks))
      (write-string "@nested[#:style 'inset]{\n" out)
      (write-blocks blocks out)
-     (write-string "}\n" out)]
-    [(struct code-block (content info))
-     (fprintf out "@nested[#:style 'code-inset]{@verbatim[~S]}~%" content)]
+     (write-string "}\n\n" out)]
+    [(struct code-block (content info-string))
+     (if (and (member (scribble-lang) '("manual" "scribble/manual"))
+              (member info-string '("scheme" "racket" "scm" "rkt")))
+         (fprintf out "@codeblock|{~%~A}|~%~%" content)
+         (fprintf out "@nested[#:style 'code-inset]{@verbatim[~S]}~%~%" content))]
     [(struct html-block (content))
      (error "html-block not supported")]
     [(struct heading (title depth))
