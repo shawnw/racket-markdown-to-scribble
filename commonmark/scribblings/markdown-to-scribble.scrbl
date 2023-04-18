@@ -35,6 +35,12 @@ Convert markdown into scribble document format. Most @hyperlink["https://commonm
 
 }
 
+@defparam[scribble-lang lang string? #:value "base"]{
+
+ The Scribble language to use for the output. A @tt{scribble/} is automatically prepended, so the default @code{"base"} becomes @code{#lang scribble/base} and so on.
+
+}
+
 @section{Command-line utility}
 
 The package also installs a command line program to convert files called @code{md2scrbl}. It reads markdown specified either by a filename given on the command line

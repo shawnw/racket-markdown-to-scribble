@@ -6,6 +6,7 @@
          commonmark commonmark/struct soup-lib/parameter)
 (provide
  (contract-out
+  [scribble-lang (parameter/c string?)]
   [document->scribble (->* (document?)
                            (#:title (or/c string? #f) #:author (or/c string? #f) #:author-email (or/c string? #f)) string?)]
   [write-scribble (->* (document?)
@@ -20,8 +21,10 @@
   (write-scribble-header doc title author author-email out)
   (write-blocks (document-blocks doc) out))
 
+(define-parameter scribble-lang "base")
+
 (define (write-scribble-header doc title author author-email out)
-  (write-string "#lang scribble/base\n\n" out)
+  (fprintf out "#lang scribble/~A~%~%" (scribble-lang))
   (cond
     (title
      (fprintf out "@title[~S]~%" title))
@@ -161,6 +164,7 @@
                   [("-t" "--title") t "Title of the document" (title t)]
                   [("-a" "--author") a "Author of document" (author a)]
                   [("-e" "--email") e "Email address of author" (email e)]
+                  [("-l" "--lang") lang "Scribble sub-language to use (Default is base)" (scribble-lang lang)]
                   #:args filenames
                   filenames))
 
