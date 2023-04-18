@@ -37,7 +37,9 @@ Convert markdown into scribble document format. Most @hyperlink["https://commonm
 
 @defparam[scribble-lang lang string? #:value "base"]{
 
- The Scribble language to use for the output. A @tt{scribble/} is automatically prepended, so the default @code{"base"} becomes @code{#lang scribble/base} and so on.
+ The Scribble language to use for the output. A @tt{scribble/} is automatically prepended if it matches one of the standard Scribble sublanguages,
+ (@code{("base" "manual" "book" "report" "sigplan" "acmart" "jfp" "lncs")}) so the default @code{"base"} becomes @code{#lang scribble/base} and so on.
+ Other values are included directly without a prefix.
 
 }
 

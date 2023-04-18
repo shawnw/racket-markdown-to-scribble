@@ -24,7 +24,11 @@
 (define-parameter scribble-lang "base")
 
 (define (write-scribble-header doc title author author-email out)
-  (fprintf out "#lang scribble/~A~%~%" (scribble-lang))
+  (case (scribble-lang)
+    (("base" "manual" "book" "report" "sigplan" "acmart" "jfp" "lncs") ; standard scribble/XXX languages
+     (fprintf out "#lang scribble/~A~%~%" (scribble-lang)))
+    (else
+     (fprintf out "#lang ~A~%~%" (scribble-lang))))
   (cond
     (title
      (fprintf out "@title[~S]~%" title))
